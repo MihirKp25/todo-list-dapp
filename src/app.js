@@ -108,6 +108,13 @@ App = {
     }
 
   },
+
+  createTask: async()=>{
+    App.setLoading(true)
+    const content =$('#newTask').val()
+    await App.todolist.createTask(content)
+    window.location.reload()
+  },
   setLoading: (boolean) => {
     App.loading = boolean
     const loader = $('#loader')
