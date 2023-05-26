@@ -115,6 +115,13 @@ App = {
     await App.todolist.createTask(content)
     window.location.reload()
   },
+
+  toggleCompleted: async(e)=>{
+    App.setLoading(true)
+    const taskid=e.target.name
+    await App.todolist.toggleCompleted(taskid)
+    window.location.reload()
+  },
   setLoading: (boolean) => {
     App.loading = boolean
     const loader = $('#loader')
